@@ -261,7 +261,7 @@ The expanded view includes the loan count, funded amount, Fully Paid count, Char
 
 ## 2.2 Payments view
 
-![Credit Risk Analysis — Payments view](Screenshots/Dashboard%202%20Part%202%20CO%20Percentage%20Received.png)
+![Credit Risk Analysis — Payments view](Screenshots/Dashboard%202%20part%202%20CO%20Percentage%20Received.png)
 
 ### What I wanted to investigate
 
