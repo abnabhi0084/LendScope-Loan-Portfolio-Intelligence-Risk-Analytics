@@ -153,8 +153,7 @@ SELECT
     L.member_id,
     P.purpose_key,
     G.credit_grade_key,
-    S.state_key,
-    L.loan_amount,
+    S.state_key,   
     L.annual_income,
     L.installment,
     L.int_rate,
@@ -170,7 +169,9 @@ SELECT
     L.issue_date,
     L.last_payment_date,
     L.next_payment_date,
-    L.last_credit_pull_date
+    L.last_credit_pull_date,
+    L.loan_amount,
+    L.total_payment
 INTO dbo.Fact_Loan
 FROM dbo.Financial_Loan_Clean AS L
 INNER JOIN dbo.Dim_LoanPurpose AS P

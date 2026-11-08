@@ -31,12 +31,12 @@ SELECT
     SUM(CASE WHEN total_acc IS NULL THEN 1 ELSE 0 END) AS Null_TotalAccounts,
     SUM(CASE WHEN total_payment IS NULL THEN 1 ELSE 0 END) AS Null_TotalPayment
 
-FROM dbo.Financial_Loan_Stagging;
+FROM dbo.Financial_Loan_Staging;
 
 
 --Checking For Null Values in emp_title
 SELECT *
-FROM dbo.Financial_Loan_Stagging
+FROM dbo.Financial_Loan_Staging
 WHERE emp_title IS NULL;
 GO
 
@@ -53,13 +53,13 @@ SELECT
     SUM(CASE WHEN LTRIM(RTRIM(sub_grade)) = '' THEN 1 ELSE 0 END) AS Blank_SubGrade,
     SUM(CASE WHEN LTRIM(RTRIM(term)) = '' THEN 1 ELSE 0 END) AS Blank_Term,
     SUM(CASE WHEN LTRIM(RTRIM(verification_status)) = '' THEN 1 ELSE 0 END) AS Blank_VerificationStatus
-FROM dbo.Financial_Loan_Stagging;
+FROM dbo.Financial_Loan_Staging;
 
 --Checking Duplicate loan ID
 SELECT
     id,
     COUNT(*) AS RecordCount
-FROM dbo.Financial_Loan_Stagging
+FROM dbo.Financial_Loan_Staging
 GROUP BY id
 HAVING COUNT(*) > 1;
 
@@ -67,7 +67,7 @@ HAVING COUNT(*) > 1;
 SELECT
     member_id,
     COUNT(*) AS LoanCount
-FROM dbo.Financial_Loan_Stagging
+FROM dbo.Financial_Loan_Staging
 GROUP BY member_id
 HAVING COUNT(*) > 1;
 
@@ -89,7 +89,7 @@ SELECT
     -- DTI 
     SUM(CASE WHEN dti < 0 THEN 1 ELSE 0 END) AS Negative_DTI
 
-FROM dbo.Financial_Loan_Stagging;
+FROM dbo.Financial_Loan_Staging;
 
 -- Checking data type of each column
 SELECT
@@ -98,7 +98,7 @@ SELECT
     CHARACTER_MAXIMUM_LENGTH,
     IS_NULLABLE
 FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = 'Financial_Loan_Stagging'
+WHERE TABLE_NAME = 'Financial_Loan_Staging'
     AND TABLE_SCHEMA = 'dbo'
 ORDER BY ORDINAL_POSITION;
 
@@ -139,7 +139,7 @@ SELECT
 
 INTO dbo.Financial_Loan_Clean
 
-FROM dbo.Financial_Loan_Stagging;
+FROM dbo.Financial_Loan_Staging;
 
 --Validating Cleaned table
 SELECT *

@@ -14,4 +14,4 @@ GO
 
 --Overview of Imported Loan Data
 Select *
-from Financial_Loan_Stagging
+from Financial_Loan_Staging
