@@ -426,32 +426,32 @@ I used the Geographic Exposure page to compare the size of each state's loan boo
 
 ### Visual 2 — Top 10 States by Loan Amount
 
-**Why I used it:** The map shows geographic concentration visually, but it is difficult to compare exact state rankings and charge-off percentages from shading alone. I used this chart to rank the ten largest state portfolios and compare their charge-off share.
+**Why I used it:** The map shows geographic concentration visually, but it is difficult to compare exact state rankings and charge-off percentages from shading alone. I used this chart to rank the ten largest state portfolios and compare their resolved-loan charge-off rates.
 
-**What it shows:** Columns rank states by original loan amount; the line displays Charged-Off Share.
+**What it shows:** Columns rank states by original loan amount; the line displays **Charged-Off Rate**.
 
-**How to read the percentage:** For this chart, **Charged-Off Share = Charged-Off loans ÷ Total loans × 100**. The denominator includes all loan records in the state, including loans with a Current status. It therefore measures the share of the entire state portfolio recorded as Charged Off, not the charge-off rate among loans with a final outcome. For example, California's 1,057 charged-off loans out of 6,894 total loans produce a share of approximately **15.3%**.
+**How to read the percentage:** For this chart, **Charged-Off Rate = Charged-Off loans ÷ Resolved loans × 100**, where Resolved loans are Fully Paid + Charged Off. Loans with a Current status are excluded because they do not yet have a final recorded outcome. The Top 10 chart uses the same resolved-loan definition as the State Risk Matrix. For example, California's 1,057 charged-off loans produce a rate of **15.66%** when divided by its resolved-loan count.
 
-| State | Original loan amount (approx.) | Charged-Off Share | Key finding |
+| State | Original loan amount (approx.) | Charged-Off Rate | Key finding |
 |---|---:|---:|---|
-| California | **$78.48M** | **15.3%** | Largest state exposure and a charge-off share above the portfolio's 13.82% share. |
-| New York | **$42.08M** | **12.6%** | Second-largest exposure, with a lower share than California. |
-| Texas | **$31.24M** | **11.3%** | Large exposure with one of the lower shares among the top ten. |
-| Florida | **$30.05M** | **17.3%** | Similar exposure to Texas but a higher charge-off share. |
-| New Jersey | **$21.66M** | **15.0%** | Smaller exposure than the leading four states, with a share above the portfolio figure. |
-| Illinois | **$17.12M** | **12.9%** | Moderate exposure and a share below the portfolio figure. |
-| Virginia | **$15.98M** | **12.4%** | Moderate exposure with a lower share than several other top-ten states. |
-| Pennsylvania | **$15.83M** | **11.4%** | Lower share among the top-ten states. |
-| Georgia | **$15.48M** | **15.3%** | Smaller exposure than the largest markets, with a share similar to California. |
-| Massachusetts | **$15M approx.** | **11.5%** | Lower charge-off share than California, Florida, and Georgia. |
+| California | **$78.48M** | **15.66%** | Largest state exposure; its resolved-loan charge-off rate is above the portfolio rate of 14.23%. |
+| New York | **$42.08M** | **13.03%** | Second-largest exposure, with a rate below the portfolio figure. |
+| Texas | **$31.24M** | **11.59%** | Large exposure with a comparatively lower resolved-loan rate. |
+| Florida | **$30.05M** | **17.80%** | Similar exposure to Texas but a higher resolved-loan rate. |
+| New Jersey | **$21.66M** | **15.47%** | Smaller exposure than the leading four states, with a rate above the portfolio figure. |
+| Illinois | **$17.12M** | **13.33%** | Moderate exposure and a rate below the portfolio figure. |
+| Virginia | **$15.98M** | **12.72%** | Moderate exposure with a rate below the portfolio figure. |
+| Pennsylvania | **$15.83M** | **11.77%** | Lower resolved-loan rate among the top-ten states. |
+| Georgia | **$15.48M** | **15.72%** | Smaller exposure than the largest markets, with a rate above the portfolio figure. |
+| Massachusetts | **$15M approx.** | See chart label | Included among the ten largest state portfolios; its resolved-loan rate is displayed by the chart line. |
 
 **Findings:**
 
-- California has the largest exposure at approximately **$78.48M** across **6,894 loans**.
+- California has the largest exposure at approximately **$78.48M** across **6,894 loans**. Its **15.66%** resolved-loan charge-off rate is above the portfolio rate of **14.23%**.
 - California, New York, and Texas together account for approximately **$151.8M**, or around **34.8%** of the total original loan amount.
-- Florida has a similar original loan amount to Texas, but its displayed Charged-Off Share is higher (**17.3% versus 11.3%**). This is a useful example of why funding rank alone is not enough to understand risk.
-- California and Georgia both show a 15.3% share, even though their loan amounts and loan counts are very different.
-- The top-ten comparison shows that the largest market is not automatically the market with the highest charge-off share.
+- Florida has a similar original loan amount to Texas, but its resolved-loan charge-off rate is higher (**17.80% versus 11.59%**). This is a useful example of why funding rank alone is not enough to understand risk.
+- New Jersey (**15.47%**) and Georgia (**15.72%**) also exceed the portfolio's **14.23%** resolved-loan rate, while New York, Texas, Illinois, Virginia, and Pennsylvania are below it.
+- The top-ten comparison shows that the largest market is not automatically the market with the highest charge-off rate.
 
 ### Visual 3 — State Risk Matrix
 
@@ -459,7 +459,7 @@ I used the Geographic Exposure page to compare the size of each state's loan boo
 
 **What it shows:** The compact matrix displays State Name, Total Loans, Funded Amount, Charge-Offs, CO Principal, and Charged-Off Rate. In the expanded table presentation, the additional state-level fields include Fully Paid loans, CO Received, and Payment %, so the viewer can compare the number of completed loans and the recorded payment-to-principal relationship as well as the charge-off exposure.
 
-**How to read the percentage:** In this matrix, **Charged-Off Rate = Charged-Off loans ÷ Resolved loans × 100**, where Resolved loans are Fully Paid + Charged Off. Current loans are excluded because they do not have a final outcome. This is why California appears as **15.3%** in the Top 10 chart but **15.66%** in the matrix: the numerator is the same, while the denominators are different.
+**How to read the percentage:** The matrix uses **Charged-Off Rate = Charged-Off loans ÷ Resolved loans × 100**, where Resolved loans are Fully Paid + Charged Off. Current loans are excluded because they do not have a final outcome. The Top 10 chart uses this same definition, so the state-level rates are consistent across both visuals.
 
 Selected rows from the overall state matrix:
 
@@ -482,24 +482,24 @@ Selected rows from the overall state matrix:
 
 The matrix includes a total row so the state-level figures can be compared with the portfolio. The total percentage is recalculated from the total counts and is not the sum or simple average of the state percentages.
 
-### Visual 4 — State Risk Segmentation: Loan Count vs. Charged-Off Share
+### Visual 4 — State Risk Segmentation: Loan Count vs. Charged-Off Rate
 
-**Why I used it:** I wanted to distinguish states with many loans from states with a high Charged-Off Share. The matrix provides exact figures, while the scatter plot makes the relationship between loan volume and the all-loan charge-off share easier to see across all represented geographies.
+**Why I used it:** I wanted to distinguish states with many loans from states with a high Charged-Off Rate. The matrix provides exact figures, while the scatter plot makes the relationship between loan volume and the resolved-loan charge-off rate easier to see across all represented geographies.
 
 **What it shows:**
 - **X-axis:** Total loan count in the state.
-- **Y-axis:** Charged-Off Share.
+- **Y-axis:** Charged-Off Rate.
 - **Bubble size:** Original loan amount, showing the relative size of state exposure.
 - **Colour:** Risk category used in the report.
 
 | Scatter-plot pattern | Key finding |
 |---|---|
 | Points further to the right | States with larger loan counts. |
-| Points higher on the chart | States with higher Charged-Off Share. |
+| Points higher on the chart | States with higher Charged-Off Rate. |
 | Larger bubbles | States with greater original loan amount. |
-| States with high values on both axes | Geographic segments that combine loan volume with a higher observed charge-off share and deserve closer review. |
+| States with high values on both axes | Geographic segments that combine loan volume with a higher observed charge-off rate and deserve closer review. |
 
-**Finding:** The plot shows that a high loan count does not automatically mean a high charge-off share. It also makes it possible to notice states with smaller loan books but relatively high shares. Reading the position, size, and colour together gives a more complete picture than ranking states by funded amount alone.
+**Finding:** The plot shows that a high loan count does not automatically mean a high charge-off rate. It also makes it possible to notice states with smaller loan books but relatively high rates. Reading the position, size, and colour together gives a more complete picture than ranking states by funded amount alone.
 
 ### Investigation using the Geographic Exposure slicers
 
@@ -518,22 +518,22 @@ After reviewing the overall map, Top 10 chart, matrix, and scatter plot, I used 
 
 #### Top state exposures under the 60-month filter
 
-| State | Loan count | Original loan amount (approx.) | Charged-Off Share in Top 10 chart | Key finding |
+| State | Loan count | Original loan amount (approx.) | Charged-Off Rate in Top 10 chart | Key finding |
 |---|---:|---:|---:|---|
-| California | 1,684 | **$26.36M** | **24.7%** | Largest 60-month state exposure and loan count. |
-| New York | 940 | **$14.70M** | **21.8%** | Second-largest exposure in this filtered comparison. |
-| Texas | 662 | **$11.05M** | **19.0%** | Lower share than California and New York in the chart. |
-| Florida | 714 | **$11.00M** | **27.5%** | Similar exposure to Texas but a much higher share. |
-| New Jersey | 503 | **$8.32M** | **23.5%** | Elevated share in the filtered segment. |
-| Georgia | 392 | **$6.43M** | **19.6%** | Smaller exposure and a lower share than several states above it. |
-| Virginia | 380 | **$6.32M** | **21.3%** | Smaller state portfolio with a share above 20%. |
-| Illinois | 385 | **$6.14M** | **21.8%** | Similar exposure to Pennsylvania and a higher share in the chart. |
-| Pennsylvania | 413 | **$6.14M** | **20.3%** | More loans than Illinois in this filtered view, with a slightly lower share. |
-| Ohio | — | **Approx. $5.6M** | **19.8%** | Included among the ten largest state exposures in the filtered chart. |
+| California | 1,684 | **$26.36M** | **27.00%** | Largest 60-month state exposure and loan count. |
+| New York | 940 | **$14.70M** | **24.70%** | Second-largest exposure in this filtered comparison. |
+| Texas | 662 | **$11.05M** | **21.18%** | Lower rate than California and New York in the filtered matrix. |
+| Florida | 714 | **$11.00M** | **31.01%** | Similar exposure to Texas but a much higher resolved-loan rate. |
+| New Jersey | 503 | **$8.32M** | **26.46%** | Elevated resolved-loan rate in the filtered segment. |
+| Georgia | 392 | **$6.43M** | **21.75%** | Smaller exposure and a lower rate than several states above it. |
+| Virginia | 380 | **$6.32M** | **23.68%** | Smaller state portfolio with a rate above 20%. |
+| Illinois | 385 | **$6.14M** | **24.78%** | Similar exposure to Pennsylvania and a higher rate in the matrix. |
+| Pennsylvania | 413 | **$6.14M** | **22.89%** | More loans than Illinois in this filtered view, with a slightly lower rate. |
+| Ohio | — | **Approx. $5.6M** | See chart label | Included among the ten largest state exposures in the filtered chart; its resolved-loan rate is displayed by the chart line. |
 
 #### What does the filtered State Risk Matrix show?
 
-The 60-month Top 10 chart continues to use **Charged-Off loans ÷ all 60-month loans in that state**. The matrix reports the state-level **Charged-Off Rate** using only resolved 60-month loans (Fully Paid + Charged Off), excluding Current loans. The two percentages therefore use different denominators. In the filtered view, the matrix rates for several of the largest state portfolios are:
+The 60-month Top 10 chart and State Risk Matrix both use **Charged-Off Rate = Charged-Off loans ÷ Resolved loans × 100**, where Resolved loans are Fully Paid + Charged Off. Current loans are excluded. The rate values below are taken from the filtered State Risk Matrix; the Top 10 chart displays the same measure.
 
 | State | Loan count | Original loan amount | Charge-Offs | CO Principal | Matrix Charged-Off Rate | Key finding |
 |---|---:|---:|---:|---:|---:|---|
@@ -556,9 +556,9 @@ The 60-month Top 10 chart continues to use **Charged-Off loans ÷ all 60-month l
 - In the 60-month scatter plot, many state markers move into the red/high-risk category. The higher charge-off pattern is therefore visible across multiple states in this filtered segment, rather than being limited to one large state.
 - The matrix and scatter plot provide two views of the same investigation: the matrix gives the state figures, while the scatter plot makes the broader state pattern easier to identify.
 
-The Top 10 chart and State Risk Matrix use differently named percentages and denominators: **Charged-Off Share** divides by all loans, while **Charged-Off Rate** divides by resolved loans only. Keeping those labels and definitions separate makes the comparison easier to interpret.
+The Top 10 chart and State Risk Matrix use the same **Charged-Off Rate** definition and resolved-loan denominator. This keeps the geographic risk comparison consistent across the two visuals.
 
-This filter-based investigation connects the term-level finding from Credit Risk Analysis with the geographic view. It shows where the 60-month portfolio is located and which state segments combine loan volume with a higher observed charge-off share.
+This filter-based investigation connects the term-level finding from Credit Risk Analysis with the geographic view. It shows where the 60-month portfolio is located and which state segments combine loan volume with a higher observed resolved-loan charge-off rate.
 
 ---
 
@@ -678,9 +678,9 @@ The source dataset includes loan and borrower attributes such as loan amount, to
 | Funded Amount | Sum of `loan_amount` in the fact table |
 | Received Amount | Sum of `total_payment` |
 | Fully Paid Share | Fully Paid loans ÷ all loans × 100 |
-| Charged-Off Share | Charged-Off loans ÷ all loans × 100; includes Current loans in the denominator |
+| Charged-Off Share (Portfolio Overview) | Charged-Off loans ÷ all loans × 100; includes Current loans in the denominator |
 | Resolved Loans | Fully Paid loans + Charged-Off loans; excludes Current loans |
-| Resolved Charged-Off Rate | Charged-Off loans ÷ resolved loans × 100 |
+| Charged-Off Rate (Credit Risk and Geographic Exposure) | Charged-Off loans ÷ resolved loans × 100; excludes Current loans |
 | CO Principal | Sum of `loan_amount` for Charged-Off loans |
 | CO Received | Sum of `total_payment` for Charged-Off loans |
 | Payment % | CO Received ÷ CO Principal × 100 |
@@ -688,7 +688,7 @@ The source dataset includes loan and borrower attributes such as loan amount, to
 | Average DTI | Average of `dti` in the stored scale |
 | Total States | Distinct geographic keys represented in the data |
 
-**Rate definitions matter.** The Portfolio Overview's **13.82% Charged-Off Share** uses all loans as the denominator. The Geographic Exposure Top 10 chart and state scatter plot also use all loans within each state (or filtered state segment), including Current loans. The Credit Risk and Geographic KPI of **14.23%**, along with the State Risk Matrix's Charged-Off Rate, uses resolved loans (Fully Paid + Charged Off) and excludes Current loans. Therefore, the same state can show different percentages in the Top 10 chart and the matrix without the figures contradicting each other. For example, California is **15.3%** on the all-loan basis and **15.66%** on the resolved-loan basis.
+**Rate definitions matter.** The Portfolio Overview's **13.82% Charged-Off Share** uses all loans as the denominator and includes Current loans. In contrast, the Credit Risk and Geographic Exposure dashboards use **Charged-Off Rate = Charged-Off loans ÷ Resolved loans × 100**, where Resolved loans are Fully Paid + Charged Off and Current loans are excluded. The Geographic Exposure Top 10 chart, State Risk Matrix, and state scatter plot all use this same resolved-loan definition. The overall resolved-loan charge-off rate is **14.23%**. For example, California's state-level rate is **15.66%** in both the Top 10 chart and State Risk Matrix.
 
 **Funded Amount naming:** The report's Funded Amount is calculated from `SUM(loan_amount)`, because the analytical fact table uses `loan_amount` and does not contain a separate `funded_amount` field.
 
