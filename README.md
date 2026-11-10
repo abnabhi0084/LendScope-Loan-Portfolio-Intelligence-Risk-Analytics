@@ -430,6 +430,8 @@ I used the Geographic Exposure page to compare the size of each state's loan boo
 
 **What it shows:** Columns rank states by original loan amount; the line displays Charged-Off Share.
 
+**How to read the percentage:** For this chart, **Charged-Off Share = Charged-Off loans ÷ Total loans × 100**. The denominator includes all loan records in the state, including loans with a Current status. It therefore measures the share of the entire state portfolio recorded as Charged Off, not the charge-off rate among loans with a final outcome. For example, California's 1,057 charged-off loans out of 6,894 total loans produce a share of approximately **15.3%**.
+
 | State | Original loan amount (approx.) | Charged-Off Share | Key finding |
 |---|---:|---:|---|
 | California | **$78.48M** | **15.3%** | Largest state exposure and a charge-off share above the portfolio's 13.82% share. |
@@ -457,6 +459,8 @@ I used the Geographic Exposure page to compare the size of each state's loan boo
 
 **What it shows:** The compact matrix displays State Name, Total Loans, Funded Amount, Charge-Offs, CO Principal, and Charged-Off Rate. In the expanded table presentation, the additional state-level fields include Fully Paid loans, CO Received, and Payment %, so the viewer can compare the number of completed loans and the recorded payment-to-principal relationship as well as the charge-off exposure.
 
+**How to read the percentage:** In this matrix, **Charged-Off Rate = Charged-Off loans ÷ Resolved loans × 100**, where Resolved loans are Fully Paid + Charged Off. Current loans are excluded because they do not have a final outcome. This is why California appears as **15.3%** in the Top 10 chart but **15.66%** in the matrix: the numerator is the same, while the denominators are different.
+
 Selected rows from the overall state matrix:
 
 | State | Total loans | Funded amount | Charge-Offs | CO Principal | Charged-Off Rate | Key finding |
@@ -478,9 +482,9 @@ Selected rows from the overall state matrix:
 
 The matrix includes a total row so the state-level figures can be compared with the portfolio. The total percentage is recalculated from the total counts and is not the sum or simple average of the state percentages.
 
-### Visual 4 — State Risk Segmentation: Loan Count vs. Charge-Off Rate
+### Visual 4 — State Risk Segmentation: Loan Count vs. Charged-Off Share
 
-**Why I used it:** I wanted to distinguish states with many loans from states with a high charge-off rate. The matrix provides exact figures, while the scatter plot makes the relationship between volume and rate easier to see across all represented geographies.
+**Why I used it:** I wanted to distinguish states with many loans from states with a high Charged-Off Share. The matrix provides exact figures, while the scatter plot makes the relationship between loan volume and the all-loan charge-off share easier to see across all represented geographies.
 
 **What it shows:**
 - **X-axis:** Total loan count in the state.
@@ -529,7 +533,7 @@ After reviewing the overall map, Top 10 chart, matrix, and scatter plot, I used 
 
 #### What does the filtered State Risk Matrix show?
 
-The matrix reports the state-level **Charged-Off Rate** separately from the Top 10 chart's **Charged-Off Share**. In the filtered view, the matrix rates for several of the largest state portfolios are:
+The 60-month Top 10 chart continues to use **Charged-Off loans ÷ all 60-month loans in that state**. The matrix reports the state-level **Charged-Off Rate** using only resolved 60-month loans (Fully Paid + Charged Off), excluding Current loans. The two percentages therefore use different denominators. In the filtered view, the matrix rates for several of the largest state portfolios are:
 
 | State | Loan count | Original loan amount | Charge-Offs | CO Principal | Matrix Charged-Off Rate | Key finding |
 |---|---:|---:|---:|---:|---:|---|
@@ -552,7 +556,7 @@ The matrix reports the state-level **Charged-Off Rate** separately from the Top 
 - In the 60-month scatter plot, many state markers move into the red/high-risk category. The higher charge-off pattern is therefore visible across multiple states in this filtered segment, rather than being limited to one large state.
 - The matrix and scatter plot provide two views of the same investigation: the matrix gives the state figures, while the scatter plot makes the broader state pattern easier to identify.
 
-The Top 10 chart and State Risk Matrix use differently named percentages: the chart displays **Charged-Off Share**, while the matrix displays **Charged-Off Rate**. Keeping those labels separate makes the comparison easier to interpret.
+The Top 10 chart and State Risk Matrix use differently named percentages and denominators: **Charged-Off Share** divides by all loans, while **Charged-Off Rate** divides by resolved loans only. Keeping those labels and definitions separate makes the comparison easier to interpret.
 
 This filter-based investigation connects the term-level finding from Credit Risk Analysis with the geographic view. It shows where the 60-month portfolio is located and which state segments combine loan volume with a higher observed charge-off share.
 
@@ -673,10 +677,10 @@ The source dataset includes loan and borrower attributes such as loan amount, to
 | Total Loans | Count of distinct loan IDs |
 | Funded Amount | Sum of `loan_amount` in the fact table |
 | Received Amount | Sum of `total_payment` |
-| Fully Paid Share | Fully Paid loans ÷ all loans |
-| Charged-Off Share | Charged-Off loans ÷ all loans |
-| Resolved Loans | Fully Paid loans + Charged-Off loans |
-| Resolved Charged-Off Rate | Charged-Off loans ÷ resolved loans |
+| Fully Paid Share | Fully Paid loans ÷ all loans × 100 |
+| Charged-Off Share | Charged-Off loans ÷ all loans × 100; includes Current loans in the denominator |
+| Resolved Loans | Fully Paid loans + Charged-Off loans; excludes Current loans |
+| Resolved Charged-Off Rate | Charged-Off loans ÷ resolved loans × 100 |
 | CO Principal | Sum of `loan_amount` for Charged-Off loans |
 | CO Received | Sum of `total_payment` for Charged-Off loans |
 | Payment % | CO Received ÷ CO Principal × 100 |
@@ -684,7 +688,7 @@ The source dataset includes loan and borrower attributes such as loan amount, to
 | Average DTI | Average of `dti` in the stored scale |
 | Total States | Distinct geographic keys represented in the data |
 
-**Rate definitions matter.** The Portfolio Overview's 13.82% Charged-Off Share uses all loans as the denominator. The Credit Risk and Geographic KPI of 14.23% uses resolved loans (Fully Paid + Charged Off). The state Top 10 chart is labelled Charged-Off Share, while the state matrix displays Charged-Off Rate. These measures should be interpreted using their respective denominator definitions.
+**Rate definitions matter.** The Portfolio Overview's **13.82% Charged-Off Share** uses all loans as the denominator. The Geographic Exposure Top 10 chart and state scatter plot also use all loans within each state (or filtered state segment), including Current loans. The Credit Risk and Geographic KPI of **14.23%**, along with the State Risk Matrix's Charged-Off Rate, uses resolved loans (Fully Paid + Charged Off) and excludes Current loans. Therefore, the same state can show different percentages in the Top 10 chart and the matrix without the figures contradicting each other. For example, California is **15.3%** on the all-loan basis and **15.66%** on the resolved-loan basis.
 
 **Funded Amount naming:** The report's Funded Amount is calculated from `SUM(loan_amount)`, because the analytical fact table uses `loan_amount` and does not contain a separate `funded_amount` field.
 
@@ -759,3 +763,14 @@ LendScope brings together SQL Server data preparation, relational modelling, ana
 The analysis starts with the overall loan-status mix and lending distribution, then moves into credit grades, sub-grades, loan purposes, and repayment terms. The Payments view adds the amounts associated with charged-off accounts, while the Geographic Exposure page shows how state-level loan volume and charge-off rates differ. Interactive filters make it possible to investigate combinations such as 60-month Small Business loans and to follow those patterns across credit grades and states.
 
 **Tools:** Microsoft SQL Server · T-SQL · Power BI · DAX
+
+---
+
+## Author
+
+**Abhishek Mishra**  
+GitHub: [@abnabhi0084](https://github.com/abnabhi0084)
+
+**Project:** LendScope — Loan Portfolio Intelligence & Risk Analytics  
+**Tools:** Microsoft SQL Server · T-SQL · Power BI · DAX
+
